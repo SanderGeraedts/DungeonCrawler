@@ -12,14 +12,27 @@ package Models;
 public class NPC
 {
     // Fields
+    private int expDrop;
+    private int goldDrop;
     
     // Constructor
-    public NPC()
+    public NPC(int expDrop, int goldDrop)
     {
-        
+        this.expDrop = expDrop;
+        this.goldDrop = goldDrop;
     }
     
     // Methods
+    public int getExpDrop()
+    {
+        return expDrop;
+    }
+
+    public int getGoldDrop()
+    {
+        return goldDrop;
+    }
+    
     public void dropLoot()
     {
         

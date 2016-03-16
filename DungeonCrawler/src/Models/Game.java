@@ -14,15 +14,34 @@ import java.util.ArrayList;
 public class Game
 {
     // Fields
+    private int id;
+    private int floorNumber;
     private Game game;
     
     // Constructor
-    public Game()
+    public Game(int id, int floorNumber, Game game)
     {
-        
+        this.id = id;
+        this.floorNumber = floorNumber;
+        this.game = game;
     }
     
     // Methods
+    public int getId()
+    {
+        return id;
+    }
+
+    public int getFloorNumber()
+    {
+        return floorNumber;
+    }
+
+    public Game getGame()
+    {
+        return game;
+    }
+    
     public void startGame(ArrayList player)
     {
         
