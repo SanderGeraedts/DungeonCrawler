@@ -27,4 +27,31 @@ public class Skill {
     // <editor-fold defaultstate="collapsed" desc="Methods">
     // ...
     // </editor-fold>
+
+    /**
+     * Gets the skill's id
+     * 
+     * @return Returns the skill's id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * Gets the skill's name
+     * 
+     * @return Return the skill's name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Gets the skill's cooldown
+     * 
+     * @return Return the skill's cooldown
+     */
+    public int getCooldown() {
+        return cooldown;
+    }
 }

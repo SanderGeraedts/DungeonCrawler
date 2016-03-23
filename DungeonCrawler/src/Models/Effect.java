@@ -31,4 +31,49 @@ public class Effect {
     // <editor-fold defaultstate="collapsed" desc="Methods">
     // ...
     // </editor-fold>
+
+    /**
+     * Gets the effect's id
+     * 
+     * @return Returns the effect's id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * Gets the effect's name
+     * 
+     * @return Returns the effect's name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Gets the duration of the effect in miliseconds
+     * 
+     * @return Returns the duration of the effect
+     */
+    public int getDuration() {
+        return duration;
+    }
+
+    /**
+     * Gets the effect's attribute
+     * 
+     * @return Returns the effect's attribute
+     */
+    public Attribute getAttribute() {
+        return attribute;
+    }
+
+    /**
+     * Returns the type of this effect. -1 resembles a debuff, +1 resembles a buff.
+     * 
+     * @return Returns the effect's type
+     */
+    public int getEffect() {
+        return effect;
+    }
 }
