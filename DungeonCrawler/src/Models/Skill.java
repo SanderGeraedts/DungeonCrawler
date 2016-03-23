@@ -11,12 +11,16 @@ package Models;
  */
 public class Skill {
     // <editor-fold defaultstate="collapsed" desc="Fields">
-    // ...
+    private int id;
+    private String name;
+    private int cooldown;
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Constructor">
-    public Skill() {
-
+    public Skill(int id, String name, int cooldown) {
+        this.id = id;
+        this.name = name;
+        this.cooldown = cooldown;
     }
     // </editor-fold>
 

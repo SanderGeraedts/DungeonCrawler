@@ -10,7 +10,6 @@ package Models;
  * @author Maxime & Sander
  */
 public abstract class Character {
-
     // <editor-fold defaultstate="collapsed" desc="Fields">
     private int id;
     private String name;

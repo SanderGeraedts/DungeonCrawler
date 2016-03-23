@@ -10,7 +10,6 @@ package Models;
  * @author Maxime & Sander
  */
 public class Floor {
-
     // <editor-fold defaultstate="collapsed" desc="Fields">
 
     private int id;

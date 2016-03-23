@@ -12,7 +12,6 @@ import java.util.ArrayList;
  * @author Maxime & Sander
  */
 public class Game {
-
     // <editor-fold defaultstate="collapsed" desc="Fields">
     private int id;
     private Hero partyLeader;

@@ -15,8 +15,8 @@ public class Spectator extends User {
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Constructor">
-    public Spectator(int ID, String name, String password) {
-        super(ID, name, password);
+    public Spectator(int id, String name, String password) {
+        super(id, name, password);
     }
     // </editor-fold>
 

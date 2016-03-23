@@ -7,17 +7,22 @@ package Models;
 
 /**
  *
- * @author Maxime
+ * @author Maxime & Sander
  */
 public class Combat
 {
-    // Fields
+    // <editor-fold defaultstate="collapsed" desc="Fields">
+    // ...
+    // </editor-fold>
     
-    // Constructor
+    // <editor-fold defaultstate="collapsed" desc="Constructor">
     public Combat()
     {
         
     }
+    // </editor-fold>
     
-    // Methods
+    // <editor-fold defaultstate="collapsed" desc="Constructor">
+    // ...
+    // </editor-fold>
 }

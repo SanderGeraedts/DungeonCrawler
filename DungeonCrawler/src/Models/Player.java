@@ -10,7 +10,6 @@ package Models;
  * @author Maxime & Sander
  */
 public class Player extends User{
-
     // <editor-fold defaultstate="collapsed" desc="Fields">
     private int gold;
     // </editor-fold>

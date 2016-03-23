@@ -11,12 +11,14 @@ package Models;
  */
 public class Tile {
     // <editor-fold defaultstate="collapsed" desc="Fields">
-    // ...
+    private int x;
+    private int y;
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Constructor">
-    public Tile() {
-
+    public Tile(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
     // </editor-fold>
 

@@ -10,7 +10,6 @@ package Models;
  * @author Maxime & Sander
  */
 public class Hero extends Character {
-
     // <editor-fold defaultstate="collapsed" desc="Fields">
     private int experience;
     // </editor-fold>

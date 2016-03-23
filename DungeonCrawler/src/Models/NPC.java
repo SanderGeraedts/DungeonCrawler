@@ -10,7 +10,6 @@ package Models;
  * @author Maxime & Sander
  */
 public class NPC extends Character {
-
     // <editor-fold defaultstate="collapsed" desc="Fields">
     private int expDrop;
     private int goldDrop;

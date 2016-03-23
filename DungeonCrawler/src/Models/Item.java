@@ -10,9 +10,8 @@ package Models;
  * @author Maxime & Sander
  */
 public class Item {
-
     // <editor-fold defaultstate="collapsed" desc="Fields">
-    private int ID;
+    private int id;
     private String name;
     private String description;
     private int cost;
@@ -20,8 +19,8 @@ public class Item {
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Constructor">
-    public Item(int ID, String name, String description, int cost, int lvlRequirement) {
-        this.ID = ID;
+    public Item(int id, String name, String description, int cost, int lvlRequirement) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.cost = cost;

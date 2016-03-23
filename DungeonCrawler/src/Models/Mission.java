@@ -10,9 +10,7 @@ package Models;
  * @author Maxime & Sander
  */
 public class Mission {
-
     // <editor-fold defaultstate="collapsed" desc="Fields">
-
     private int id;
     private String name;
     private String description;
@@ -22,7 +20,8 @@ public class Mission {
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Constructor">
-    public Mission(String name, String description, String questGiver, int rewardGold, int rewardExp) {
+    public Mission(int id, String name, String description, String questGiver, int rewardGold, int rewardExp) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.questGiver = questGiver;
