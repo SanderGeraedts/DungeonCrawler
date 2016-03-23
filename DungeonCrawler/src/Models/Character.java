@@ -116,10 +116,10 @@ public abstract class Character {
     }
 
     /**
-     * This method moves a player to a specified tile.
+     * This method moves a character to a specified tile.
      *
-     * @param tile The tile to which the player wants to move.
-     * @return Return true if the player has been successfully moved to the
+     * @param tile The tile to which the character wants to move.
+     * @return Return true if the character is able to move to the
      * specified tile. Otherwise return false.
      */
     public boolean move(Tile tile) {
@@ -127,9 +127,9 @@ public abstract class Character {
     }
 
     /**
-     * This method applies a specified effect to the player
+     * This method applies a specified effect to the character
      *
-     * @param effect The effect which should be applied to the player.
+     * @param effect The effect which should be applied to the character.
      * @return Return true if the effect has been successfully applied.
      * Otherwise return false;
      */

@@ -34,10 +34,10 @@ public class Hero extends Character {
     
     /**
      * This method allows the player to pick up items, adding them to the
-     * players possession.
+     * hero's possession.
      *
      * @param tile The tile containing the items, which should be picked up.
-     * @return Return true if the items are picked up and added to the players
+     * @return Return true if the items are picked up and added to the hero's
      * possession. Otherwise return false.
      */
     public boolean pickUpItems(Tile tile) {
@@ -47,7 +47,7 @@ public class Hero extends Character {
     /**
      * This method allows the player to buy an item, removing gold equal to the
      * value of the item from the players possession and adding the item to the
-     * players possession.
+     * hero's possession.
      *
      * @param item The item which should be bought.
      * @return Return true if the item has been successfully bought. Otherwise
@@ -59,7 +59,7 @@ public class Hero extends Character {
 
     /**
      * This method allows the player to use an item, removing it from the
-     * players possession and possibly applying an effect to the player
+     * hero's possession and possibly applying an effect to the hero
      * (depending on the type of item).
      *
      * @param item The item which should be used.
@@ -71,18 +71,18 @@ public class Hero extends Character {
     }
     
     /**
-     * This method sells a specified item, removing it from the players
+     * This method sells a specified item, removing it from the hero's
      * possession and granting that player gold equal to the value of the item.
      * @param item The item which should be sold.
      * @return Return true if the item has been successfully sold.
-     * Otherwise return false;
+     * Otherwise return false.
      */
     public boolean sellItem(Item item) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     /**
-     * This method drops a specified item, removing it from the players
+     * This method drops a specified item, removing it from the hero's
      * possession.
      * @param item The item which should be dropped.
      * @return Return true if the item has been successfully dropped.
@@ -94,7 +94,7 @@ public class Hero extends Character {
     
     /**
      * This method allows a player to attempt to flee from combat, removing the
-     * player from combat. This is not guaranteed to be successful.
+     * hero from combat. This is not guaranteed to be successful.
      * @return Return true if the player has fled from combat successfully.
      */
     public boolean flee() {

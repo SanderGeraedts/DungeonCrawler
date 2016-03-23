@@ -43,18 +43,18 @@ public class NPC extends Character {
 
     // <editor-fold defaultstate="collapsed" desc="Methods">
     /**
-     * This method makes the NPC drop loot.
+     * This method is called when the NPC dies, possibly resulting in loot being dropped.
      * 
-     * @return true if there is loot being dropped. Otherwise it returns false.
+     * @return Return true if there is loot being dropped. Otherwise return false.
      */
     public boolean dropLoot() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
-     * This method makes the NPC start moving trough the floor.
+     * This method makes the NPC start moving.
      * 
-     * @return true if the NPC moves through the floor. Otherwise return false.
+     * @return Returns true if the NPC is able to move. Otherwise return false.
      */
     public boolean startMove() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
