@@ -7,17 +7,20 @@ package Models;
 
 /**
  *
- * @author Maxime
+ * @author Maxime & Sander
  */
-public class Tile
-{
-    // Fields
-    
-    // Constructor
-    public Tile()
-    {
-        
+public class Tile {
+    // <editor-fold defaultstate="collapsed" desc="Fields">
+    // ...
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="Constructor">
+    public Tile() {
+
     }
-    
-    // Methods
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="Methods">
+    // ...
+    // </editor-fold>
 }

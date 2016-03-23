@@ -7,26 +7,34 @@ package Models;
 
 /**
  *
- * @author Maxime
+ * @author Maxime & Sander
  */
-public class Spectator
-{
-    // Fields
-    
-    // Constructor
-    public Spectator()
-    {
-        
+public class Spectator {
+    // <editor-fold defaultstate="collapsed" desc="Fields">
+    // ...
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="Constructor">
+    public Spectator() {
+
     }
-    
-    // Methods
-    public void nextPlayer()
-    {
-        
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="Methods"> 
+    /**
+     * This method allows a spectator to switch to the next player, watching
+     * his/her movement and actions.
+     */
+    public void nextPlayer() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    public void prevPlayer()
-    {
-        
+
+    /**
+     * This method allows a spectator to switch to the previous player, watching
+     * his/her movement and actions.
+     */
+    public void prevPlayer() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    // </editor-fold>
 }

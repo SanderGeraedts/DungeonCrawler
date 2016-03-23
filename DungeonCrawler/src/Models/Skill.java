@@ -7,17 +7,20 @@ package Models;
 
 /**
  *
- * @author Maxime
+ * @author Maxime & Sander
  */
-public class Skill
-{
-    // Fields
-    
-    // Constructor
-    public Skill()
-    {
-        
+public class Skill {
+    // <editor-fold defaultstate="collapsed" desc="Fields">
+    // ...
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="Constructor">
+    public Skill() {
+
     }
-    
-    // Methods
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="Methods">
+    // ...
+    // </editor-fold>
 }

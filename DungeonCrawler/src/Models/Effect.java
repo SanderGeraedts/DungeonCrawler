@@ -7,17 +7,20 @@ package Models;
 
 /**
  *
- * @author Maxime
+ * @author Maxime & Sander
  */
-public class Effect
-{
-    // Fields
-    
-    // Constructor
-    public Effect()
-    {
-        
+public class Effect {
+    // <editor-fold defaultstate="collapsed" desc="Fields">
+    // ...
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="Constructor">
+    public Effect() {
+
     }
-    
-    // Methods
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="Methods">
+    // ...
+    // </editor-fold>
 }
