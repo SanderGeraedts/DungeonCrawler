@@ -9,46 +9,29 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Maxime
+ * @author Maxime & Sander
  */
-public class Game
-{
-    // Fields
+public class Game {
+
+    // <editor-fold defaultstate="collapsed" desc="Fields">
     private int id;
-    private int floorNumber;
-    private Game game;
-    
-    // Constructor
-    public Game(int id, int floorNumber, Game game)
-    {
+    private Hero partyLeader;
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="Constructor">
+    public Game(int id, Hero partyLeader) {
         this.id = id;
-        this.floorNumber = floorNumber;
-        this.game = game;
+        this.partyLeader = partyLeader;
     }
-    
-    // Methods
-    public int getId()
-    {
+    // </editor-fold>
+
+    public int getId() {
         return id;
     }
 
-    public int getFloorNumber()
-    {
-        return floorNumber;
+    // <editor-fold defaultstate="collapsed" desc="Methods">
+    public Game startGame(ArrayList<Player> player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    public Game getGame()
-    {
-        return game;
-    }
-    
-    public void startGame(ArrayList player)
-    {
-        
-    }
-    
-    public Game players()
-    {
-        return game;
-    }
+    // </editor-fold>
 }

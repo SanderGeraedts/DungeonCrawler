@@ -7,41 +7,40 @@ package Models;
 
 /**
  *
- * @author Maxime
+ * @author Maxime & Sander
  */
-public class Floor
-{
-    // Fields
+public class Floor {
+
+    // <editor-fold defaultstate="collapsed" desc="Fields">
+
     private int id;
     private String name;
     private int floorNumber;
-    
-    // Constructor
-    public Floor(int id, String name, int floorNumber)
-    {
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="Constructor">
+    public Floor(int id, String name, int floorNumber) {
         this.id = id;
         this.name = name;
         this.floorNumber = floorNumber;
     }
-    
-    // Methods
-    public int getId()
-    {
+    // </editor-fold>
+
+    public int getId() {
         return id;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public int getFloorNumber()
-    {
+    public int getFloorNumber() {
         return floorNumber;
     }
-    
-    public void generateFloor()
-    {
-        
+
+    // <editor-fold defaultstate="collapsed" desc="Methods">
+    public boolean generateFloor() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    // </editor-fold>
 }

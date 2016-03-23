@@ -9,14 +9,16 @@ package Models;
  *
  * @author Maxime & Sander
  */
-public class Hero {
-    // <editor-fold defaultstate="collapsed" desc="Fields">
-    // ...
-    // </editor-fold>
-    
-    // <editor-fold defaultstate="collapsed" desc="Constructor">
-    public Hero() {
+public class Hero extends Character {
 
+    // <editor-fold defaultstate="collapsed" desc="Fields">
+    private int experience;
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="Constructor">
+    public Hero(int ID, String name, int health, int defence, int attack, int currentHealth, int currentTurns, int experience) {
+        super(ID, name, health, defence, attack, currentHealth, currentTurns);
+        this.experience = experience;
     }
     // </editor-fold>
 
@@ -39,8 +41,10 @@ public class Hero {
      * players possession.
      *
      * @param item The item which should be bought.
+     * @return Return true if the item has been successfully bought. Otherwise
+     * return false;
      */
-    public void buyItem(Item item) {
+    public boolean buyItem(Item item) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -50,36 +54,41 @@ public class Hero {
      * (depending on the type of item).
      *
      * @param item The item which should be used.
+     * @return Return true if the item has been successfully used. Otherwise
+     * return false;
      */
-    public void useItem(Item item) {
+    public boolean useItem(Item item) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
     /**
      * This method sells a specified item, removing it from the players
      * possession and granting that player gold equal to the value of the item.
-     *
      * @param item The item which should be sold.
+     * @return Return true if the item has been successfully sold.
+     * Otherwise return false;
      */
-    public void sellItem(Item item) {
+    public boolean sellItem(Item item) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
     /**
      * This method drops a specified item, removing it from the players
      * possession.
-     *
      * @param item The item which should be dropped.
+     * @return Return true if the item has been successfully dropped.
+     * Otherwise return false;
      */
-    public void dropItem(Item item) {
+    public boolean dropItem(Item item) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
     /**
      * This method allows a player to attempt to flee from combat, removing the
      * player from combat. This is not guaranteed to be successful.
+     * @return Return true if the player has fled from combat successfully.
      */
-    public void flee() {
+    public boolean flee() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     // </editor-fold>

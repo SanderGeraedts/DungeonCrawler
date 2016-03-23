@@ -7,72 +7,65 @@ package Models;
 
 /**
  *
- * @author Maxime
+ * @author Maxime & Sander
  */
-public class Mission
-{
-    // Fields
+public class Mission {
+
+    // <editor-fold defaultstate="collapsed" desc="Fields">
+
     private int id;
     private String name;
     private String description;
     private String questGiver;
     private int rewardGold;
     private int rewardExp;
-    
-    // Constructor
-    public Mission(int id, String name, String description, String questGiver, int rewardGold, int rewardExp)
-    {
-        this.id = id;
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="Constructor">
+    public Mission(String name, String description, String questGiver, int rewardGold, int rewardExp) {
         this.name = name;
         this.description = description;
         this.questGiver = questGiver;
         this.rewardGold = rewardGold;
         this.rewardExp = rewardExp;
     }
-    
-    // Methods
-    public int getId()
-    {
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="Methods">
+    public int getId() {
         return id;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public String getDescription()
-    {
+    public String getDescription() {
         return description;
     }
 
-    public String getQuestGiver()
-    {
+    public String getQuestGiver() {
         return questGiver;
     }
 
-    public int getRewardGold()
-    {
+    public int getRewardGold() {
         return rewardGold;
     }
 
-    public int getRewardExp()
-    {
+    public int getRewardExp() {
         return rewardExp;
     }
-    
-    public void accept(Player player)
-    {
-        
+
+    public boolean accept(Player player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    public void decline(Player player)
-    {
-        
+
+    public boolean decline(Player player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    public boolean finish(Player player)
-    {
-        return false;
+
+    public boolean finish(Player player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    // </editor-fold>
 }

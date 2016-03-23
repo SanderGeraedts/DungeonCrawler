@@ -9,31 +9,35 @@ package Models;
  *
  * @author Maxime & Sander
  */
-public class Spectator {
+public class Spectator extends User {
     // <editor-fold defaultstate="collapsed" desc="Fields">
     // ...
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Constructor">
-    public Spectator() {
-
+    public Spectator(int ID, String name, String password) {
+        super(ID, name, password);
     }
     // </editor-fold>
 
-    // <editor-fold defaultstate="collapsed" desc="Methods"> 
+    // <editor-fold defaultstate="collapsed" desc="Methods">    
     /**
      * This method allows a spectator to switch to the next player, watching
      * his/her movement and actions.
+     *
+     * @return Return the player to be spectated.
      */
-    public void nextPlayer() {
+    public Player nextPlayer() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
      * This method allows a spectator to switch to the previous player, watching
      * his/her movement and actions.
+     *
+     * @return Return the player to be spectated.
      */
-    public void prevPlayer() {
+    public Player prevPlayer() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     // </editor-fold>

@@ -9,14 +9,22 @@ package Models;
  *
  * @author Maxime & Sander
  */
-public class Class {
+public abstract class Class {
     // <editor-fold defaultstate="collapsed" desc="Fields">
-    // ...
+    private String name;
+    private int baseHP;
+    private int baseDefence;
+    private int baseAttack;
+    private int movement;
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Constructor">
-    public Class() {
-
+    public Class(String name, int baseHP, int baseDefence, int baseAttack, int movement) {
+        this.name = name;
+        this.baseHP = baseHP;
+        this.baseDefence = baseDefence;
+        this.baseAttack = baseAttack;
+        this.movement = movement;
     }
     // </editor-fold>
 

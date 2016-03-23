@@ -9,14 +9,16 @@ package Models;
  *
  * @author Maxime & Sander
  */
-public class Player {
+public class Player extends User{
+
     // <editor-fold defaultstate="collapsed" desc="Fields">
-    // ...
+    private int gold;
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Constructor">
-    public Player() {
-
+    public Player(int id, String name, String password, int gold) {
+        super(id, name, password);
+        this.gold = gold;
     }
     // </editor-fold>
 

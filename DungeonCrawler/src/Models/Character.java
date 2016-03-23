@@ -9,25 +9,40 @@ package Models;
  *
  * @author Maxime & Sander
  */
-public class Character {
+public abstract class Character {
+
     // <editor-fold defaultstate="collapsed" desc="Fields">
-    // ...
+    private int id;
+    private String name;
+    private int health;
+    private int defence;
+    private int attack;
+    private int currentHealth;
+    private int currentTurns;
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Constructor">
-    public Character() {
-
+    public Character(int id, String name, int health, int defence, int attack, int currentHealth, int currentTurns) {
+        this.id = id;
+        this.name = name;
+        this.health = health;
+        this.defence = defence;
+        this.attack = attack;
+        this.currentHealth = currentHealth;
+        this.currentTurns = currentTurns;
     }
     // </editor-fold>
 
-    // <editor-fold defaultstate="collapsed" desc="Methods">
+    // <editor-fold defaultstate="collapsed" desc="Methods">  
     /**
      * This method uses a skill to attack, putting the skill on a cooldown and
      * dealing damage to the enemies hit by the attack.
      *
      * @param skill The skill used to attack.
+     * @return Return true if the attack has been successfully executed.
+     * Otherwise return false;
      */
-    public void attack(Skill skill) {
+    public boolean attack(Skill skill) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -46,8 +61,10 @@ public class Character {
      * This method applies a specified effect to the player
      *
      * @param effect The effect which should be applied to the player.
+     * @return Return true if the effect has been successfully applied.
+     * Otherwise return false;
      */
-    public void applyEffect(Effect effect) {
+    public boolean applyEffect(Effect effect) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     // </editor-fold>

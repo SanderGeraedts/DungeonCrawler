@@ -10,15 +10,18 @@ package Models;
  * @author Maxime & Sander
  */
 public class User {
+
     // <editor-fold defaultstate="collapsed" desc="Fields">
-    private String username;
-    private String password;
-    private static User user;
+
+    private int ID;
+    private String name;
+
     // </editor-fold>
-
+    
     // <editor-fold defaultstate="collapsed" desc="Constructor">
-    public User() {
-
+    public User(int ID, String username, String password) {
+        this.ID = this.ID;
+        this.name = name;
     }
     // </editor-fold>
 

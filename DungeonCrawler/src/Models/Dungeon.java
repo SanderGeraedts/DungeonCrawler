@@ -7,48 +7,45 @@ package Models;
 
 /**
  *
- * @author Maxime
+ * @author Maxime & Sander
  */
-public class Dungeon
-{
-    // Fields
+public class Dungeon {
+
+    // <editor-fold defaultstate="collapsed" desc="Fields">
     private int id;
     private String name;
     private String type;
     private int lvlRequirement;
-    
-    // Constructor
-    public Dungeon(int id, String name, String type, int lvlRequirement)
-    {
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="Constructor">
+    public Dungeon(int id, String name, String type, int lvlRequirement) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.lvlRequirement = lvlRequirement;
     }
-    
-    // Methods
-    public int getId()
-    {
+    // </editor-fold>
+
+    public int getId() {
         return id;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public String getType()
-    {
+    public String getType() {
         return type;
     }
 
-    public int getLvlRequirement()
-    {
+    public int getLvlRequirement() {
         return lvlRequirement;
     }
-    
-    public void generateDungeon()
-    {
-        
+
+    // <editor-fold defaultstate="collapsed" desc="Methods">
+    public boolean generateDungeon() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    // </editor-fold>
 }

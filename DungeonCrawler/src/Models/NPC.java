@@ -7,39 +7,38 @@ package Models;
 
 /**
  *
- * @author Maxime
+ * @author Maxime & Sander
  */
-public class NPC
-{
-    // Fields
+public class NPC extends Character {
+
+    // <editor-fold defaultstate="collapsed" desc="Fields">
     private int expDrop;
     private int goldDrop;
-    
-    // Constructor
-    public NPC(int expDrop, int goldDrop)
-    {
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="Constructor">
+    public NPC(int id, String name, int health, int defence, int attack, int currentHealth, int currentTurns, int expDrop, int goldDrop) {
+        super(id, name, health, defence, attack, currentHealth, currentTurns);
         this.expDrop = expDrop;
         this.goldDrop = goldDrop;
     }
-    
-    // Methods
-    public int getExpDrop()
-    {
+    // </editor-fold>
+
+    public int getExpDrop() {
         return expDrop;
     }
 
-    public int getGoldDrop()
-    {
+    public int getGoldDrop() {
         return goldDrop;
     }
-    
-    public void dropLoot()
-    {
-        
+
+    // <editor-fold defaultstate="collapsed" desc="Methods">
+    public boolean dropLoot() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    public void startMove()
-    {
-        
+
+    public boolean startMove() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    // </editor-fold>
 }
