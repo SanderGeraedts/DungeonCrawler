@@ -23,9 +23,9 @@ public class Player extends User{
 
     // <editor-fold defaultstate="collapsed" desc="Methods">
     /**
-     * Gets the total amount of gold per player.
+     * Gets the total amount of gold of this player.
      * 
-     * @return the amount of gold.
+     * @return Returns the amount of gold.
      */
     public int getGold()
     {

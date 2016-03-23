@@ -32,17 +32,17 @@ public class Item {
     /**
      * Gets the id of the item.
      * 
-     * @return the items id.
+     * @return Returns the item id.
      */
     public int getID()
     {
-        return ID;
+        return id;
     }
     
     /**
      * Gets the name of the item.
      * 
-     * @return item name.
+     * @return Returns the item name.
      */
     public String getName()
     {
@@ -50,9 +50,9 @@ public class Item {
     }
     
     /**
-     * Gets the description per item.
+     * Gets the description of the item.
      * 
-     * @return item description.
+     * @return Returns the item's description.
      */
     public String description()
     {
@@ -60,9 +60,9 @@ public class Item {
     }
     
     /**
-     * Gets the cost per item.
+     * Gets the cost of the item.
      * 
-     * @return the cost per item.
+     * @return Returns the cost of one item.
      */
     public int getCost()
     {
@@ -70,9 +70,9 @@ public class Item {
     }
     
     /**
-     * Gets the level requirement per item.
+     * Gets the level requirement of the item.
      * 
-     * @return the level requirement.
+     * @return Returns the item's level requirement.
      */
     public int getLvlRequirement()
     {

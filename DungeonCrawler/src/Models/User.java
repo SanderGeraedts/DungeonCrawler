@@ -26,17 +26,17 @@ public class User {
     /**
      * Gets the ID of the current user.
      * 
-     * @return the id of the user.
+     * @return Returns the user id.
      */
     public int getID()
     {
-        return ID;
+        return id;
     }
     
     /**
-     * Gets the name of each user.
+     * Gets the name of this user.
      * 
-     * @return the users name.
+     * @return Returns the user name.
      */
     public String getName()
     {
@@ -57,7 +57,7 @@ public class User {
     }
 
     /**
-     * This method uses a username and password to log an user in.
+     * This static method allows the user to log in, requires a username and password.
      *
      * @param username The username of the user that wants to log in.
      * @param password The password of the user that wants to log in.

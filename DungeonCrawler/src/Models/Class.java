@@ -32,7 +32,7 @@ public abstract class Class {
     /**
      * Gets the name of the class.
      * 
-     * @return the class name.
+     * @return Returns the class name.
      */
     public String getName()
     {
@@ -40,9 +40,9 @@ public abstract class Class {
     }
     
     /**
-     * Gets the base HP per class.
+     * Gets the base healthpool of the class.
      * 
-     * @return baseHP.
+     * @return Returns the base healthpool.
      */
     public int getBaseHP()
     {
@@ -50,9 +50,9 @@ public abstract class Class {
     }
     
     /**
-     * Gets the base defence per class.
+     * Gets the base defence of the class.
      * 
-     * @return the base defence.
+     * @return Returns the class's base defence.
      */
     public int getBaseDefence()
     {
@@ -60,9 +60,9 @@ public abstract class Class {
     }
     
     /**
-     * Gets the base attack per class.
+     * Gets the base attack of the class.
      * 
-     * @return the base attack.
+     * @return Returns the class's base attack.
      */
     public int getBaseAttack()
     {
@@ -70,9 +70,9 @@ public abstract class Class {
     }
     
     /**
-     * Gets the movement per class.
+     * Gets the movement of the class.
      * 
-     * @return the amount of movements.
+     * @return Returns the amount of tiles a class can move over.
      */
     public int getMovement()
     {
