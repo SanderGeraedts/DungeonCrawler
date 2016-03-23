@@ -29,6 +29,54 @@ public abstract class Class {
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Methods">
-    // ... 
+    /**
+     * Gets the name of the class.
+     * 
+     * @return the class name.
+     */
+    public String getName()
+    {
+        return name;
+    }
+    
+    /**
+     * Gets the base HP per class.
+     * 
+     * @return baseHP.
+     */
+    public int getBaseHP()
+    {
+        return baseHP;
+    }
+    
+    /**
+     * Gets the base defence per class.
+     * 
+     * @return the base defence.
+     */
+    public int getBaseDefence()
+    {
+        return baseDefence;
+    }
+    
+    /**
+     * Gets the base attack per class.
+     * 
+     * @return the base attack.
+     */
+    public int getBaseAttack()
+    {
+        return baseAttack;
+    }
+    
+    /**
+     * Gets the movement per class.
+     * 
+     * @return the amount of movements.
+     */
+    public int getMovement()
+    {
+        return movement;
+    }
     // </editor-fold>
 }

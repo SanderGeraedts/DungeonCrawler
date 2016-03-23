@@ -34,6 +34,76 @@ public abstract class Character {
 
     // <editor-fold defaultstate="collapsed" desc="Methods">  
     /**
+     * Gets the id per character.
+     * 
+     * @return character id.
+     */
+    public int getID()
+    {
+        return id;
+    }
+    
+    /**
+     * Gets the name per character.
+     * 
+     * @return character name.
+     */
+    public String getName()
+    {
+        return name;
+    }
+    
+    /**
+     * Gets the health per character.
+     * 
+     * @return the characters health.
+     */
+    public int getHealth()
+    {
+        return health;
+    }
+    
+    /**
+     * Gets the characters defence.
+     * 
+     * @return the defence per character.
+     */
+    public int getDefence()
+    {
+        return defence;
+    }
+    
+    /**
+     * Gets the attack per character.
+     * 
+     * @return characters attack.
+     */
+    public int getAttack()
+    {
+        return attack;
+    }
+    
+    /**
+     * Gets the current health per character.
+     * 
+     * @return the current health.
+     */
+    public int getCurrentHealth()
+    {
+        return currentHealth;
+    }
+    
+    /**
+     * Gets the current turns per character.
+     * 
+     * @return character turns.
+     */
+    public int getCurrentTurns()
+    {
+        return currentTurns;
+    }
+    
+    /**
      * This method uses a skill to attack, putting the skill on a cooldown and
      * dealing damage to the enemies hit by the attack.
      *

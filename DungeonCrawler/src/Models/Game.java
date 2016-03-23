@@ -24,11 +24,32 @@ public class Game {
     }
     // </editor-fold>
 
+    /**
+     * Gets the id of the game.
+     * 
+     * @return the id of the game.
+     */
     public int getId() {
         return id;
     }
+    
+    /**
+     * Gets the current partyleader.
+     * 
+     * @return the partyleader.
+     */
+    public Hero getPartyLeader()
+    {
+        return partyLeader;
+    }
 
     // <editor-fold defaultstate="collapsed" desc="Methods">
+    /**
+     * Starts a game with the current amount of players in it.
+     * 
+     * @param player
+     * @return the game with the players.
+     */
     public Game startGame(ArrayList<Player> player) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

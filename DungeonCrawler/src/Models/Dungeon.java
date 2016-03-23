@@ -26,23 +26,48 @@ public class Dungeon {
     }
     // </editor-fold>
 
+    /**
+     * Get the id of the dungeon.
+     * 
+     * @return the id of the dungeon.
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Get the name of the dungeon
+     * 
+     * @return the name of the dungeon
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Get the type of the dungeon
+     * 
+     * @return return the type of the dungeon
+     */
     public String getType() {
         return type;
     }
 
+    /**
+     * Get the level requirement of the dungeon
+     * 
+     * @return the level requirement of the dungeon
+     */
     public int getLvlRequirement() {
         return lvlRequirement;
     }
 
     // <editor-fold defaultstate="collapsed" desc="Methods">
+    /**
+     * Generates the dungeon
+     * 
+     * @return true is the dungeon can be generated. Otherwise returns false
+     */
     public boolean generateDungeon() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

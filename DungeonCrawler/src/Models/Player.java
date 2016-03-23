@@ -23,6 +23,16 @@ public class Player extends User{
 
     // <editor-fold defaultstate="collapsed" desc="Methods">
     /**
+     * Gets the total amount of gold per player.
+     * 
+     * @return the amount of gold.
+     */
+    public int getGold()
+    {
+        return gold;
+    }
+    
+    /**
      * This method allows the player to buy a hero, removing gold equal to the
      * value of the hero from the players possession and adding the hero to the
      * players heroes.

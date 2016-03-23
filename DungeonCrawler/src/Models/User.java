@@ -24,6 +24,26 @@ public class User {
 
     // <editor-fold defaultstate="collapsed" desc="Methods">
     /**
+     * Gets the ID of the current user.
+     * 
+     * @return the id of the user.
+     */
+    public int getID()
+    {
+        return ID;
+    }
+    
+    /**
+     * Gets the name of each user.
+     * 
+     * @return the users name.
+     */
+    public String getName()
+    {
+        return name;
+    }
+    
+    /**
      * This method uses a username and password to create a user.
      *
      * @param username The username of an user (max. 32 alphanumeric

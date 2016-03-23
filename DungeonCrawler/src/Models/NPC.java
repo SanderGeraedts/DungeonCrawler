@@ -23,19 +23,39 @@ public class NPC extends Character {
     }
     // </editor-fold>
 
+    /**
+     * Gets the experience per NPC.
+     * 
+     * @return the amount of experience.
+     */
     public int getExpDrop() {
         return expDrop;
     }
 
+    /**
+     * Gets the gold drop per NPC.
+     * 
+     * @return the amount of gold dropped.
+     */
     public int getGoldDrop() {
         return goldDrop;
     }
 
     // <editor-fold defaultstate="collapsed" desc="Methods">
+    /**
+     * This method makes the NPC drop loot.
+     * 
+     * @return true if there is loot being dropped. Otherwise it returns false.
+     */
     public boolean dropLoot() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * This method makes the NPC start moving trough the floor.
+     * 
+     * @return true if the NPC moves through the floor. Otherwise return false.
+     */
     public boolean startMove() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

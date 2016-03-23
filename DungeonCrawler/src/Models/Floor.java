@@ -25,18 +25,38 @@ public class Floor {
     }
     // </editor-fold>
 
+    /**
+     * Gets the id of the floor
+     * 
+     * @return the id of the floor.
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Gets the name of the floor
+     * 
+     * @return the name of the floor.
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Gets the floor number
+     * 
+     * @return the floornumber.
+     */
     public int getFloorNumber() {
         return floorNumber;
     }
 
+    /**
+     * Generate a dungeon floor
+     * 
+     * @return true if the floor can be generated. Otherwise it returns false.
+     */
     // <editor-fold defaultstate="collapsed" desc="Methods">
     public boolean generateFloor() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

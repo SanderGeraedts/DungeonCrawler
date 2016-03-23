@@ -23,6 +23,16 @@ public class Hero extends Character {
 
     // <editor-fold defaultstate="collapsed" desc="Methods">
     /**
+     * Gets the experience per hero.
+     * 
+     * @return the hero experience.
+     */
+    public int getExperience()
+    {
+        return experience;
+    }
+    
+    /**
      * This method allows the player to pick up items, adding them to the
      * players possession.
      *

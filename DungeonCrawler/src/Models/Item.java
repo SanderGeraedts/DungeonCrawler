@@ -29,6 +29,54 @@ public class Item {
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Methods">
-    // ...
+    /**
+     * Gets the id of the item.
+     * 
+     * @return the items id.
+     */
+    public int getID()
+    {
+        return ID;
+    }
+    
+    /**
+     * Gets the name of the item.
+     * 
+     * @return item name.
+     */
+    public String getName()
+    {
+        return name;
+    }
+    
+    /**
+     * Gets the description per item.
+     * 
+     * @return item description.
+     */
+    public String description()
+    {
+        return description;
+    }
+    
+    /**
+     * Gets the cost per item.
+     * 
+     * @return the cost per item.
+     */
+    public int getCost()
+    {
+        return cost;
+    }
+    
+    /**
+     * Gets the level requirement per item.
+     * 
+     * @return the level requirement.
+     */
+    public int getLvlRequirement()
+    {
+        return lvlRequirement;
+    }
     // </editor-fold>
 }

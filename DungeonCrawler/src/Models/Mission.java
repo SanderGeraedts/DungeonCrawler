@@ -31,38 +31,86 @@ public class Mission {
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Methods">
+    /**
+     * Gets the mission id.
+     * 
+     * @return the id of the mission.
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Gets the mission name.
+     * 
+     * @return the name of the mission.
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Gets the mission description.
+     * 
+     * @return the description of the mission.
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * Gets the questgiver per mission.
+     * 
+     * @return the questgiver.
+     */
     public String getQuestGiver() {
         return questGiver;
     }
 
+    /**
+     * Gets the gold per mission.
+     * 
+     * @return the gold per mission.
+     */
     public int getRewardGold() {
         return rewardGold;
     }
 
+    /**
+     * Gets the experience reward per mission.
+     * 
+     * @return the experience.
+     */
     public int getRewardExp() {
         return rewardExp;
     }
 
+    /**
+     * This method makes a player can accept a mission.
+     * 
+     * @param player is the player that can accept the mission
+     * @return true if the player has accepted the mission. Otherwise return false.
+     */
     public boolean accept(Player player) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * This method makes a player can decline a mission.
+     * 
+     * @param player is the player that can decline a mission.
+     * @return true if the player has declines the mission. Otherwise return false.
+     */
     public boolean decline(Player player) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * This method makes the player finish/deliver a mission.
+     * 
+     * @param player is the player that can finish a mission.
+     * @return true if the player has finished a mission. Otherwise return false.
+     */
     public boolean finish(Player player) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
