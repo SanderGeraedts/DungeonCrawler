@@ -36,13 +36,13 @@ public class DungeonCrawler extends BasicGame
     @Override
     public void update(GameContainer gc, int i) throws SlickException 
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void render(GameContainer gc, Graphics grphcs) throws SlickException 
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
 }
