@@ -5,11 +5,13 @@
  */
 package dungeoncrawler;
 
+import org.newdawn.slick.*;
+import org.newdawn.slick.state.*;
 /**
  *
- * @author Maxime
+ * @author Maxime, Thijs
  */
-public class DungeonCrawler
+public class DungeonCrawler extends BasicGame
 {
 
     /**
@@ -18,6 +20,29 @@ public class DungeonCrawler
     public static void main(String[] args)
     {
         // TODO code application logic here
+    }
+
+    public DungeonCrawler(String title) 
+    {
+        super(title);
+    }
+
+    @Override
+    public void init(GameContainer gc) throws SlickException 
+    {
+        
+    }
+
+    @Override
+    public void update(GameContainer gc, int i) throws SlickException 
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void render(GameContainer gc, Graphics grphcs) throws SlickException 
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

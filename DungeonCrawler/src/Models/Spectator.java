@@ -7,7 +7,7 @@ package Models;
 
 /**
  *
- * @author Maxime & Sander
+ * @author Maxime, Thijs & Sander
  */
 public class Spectator extends User {
     // <editor-fold defaultstate="collapsed" desc="Fields">
@@ -27,8 +27,9 @@ public class Spectator extends User {
      *
      * @return Return the player to be spectated.
      */
-    public Player nextPlayer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Player nextPlayer() 
+    {
+        
     }
 
     /**

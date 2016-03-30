@@ -7,7 +7,7 @@ package Models;
 
 /**
  *
- * @author Maxime & Sander
+ * @author Maxime, Thijs & Sander
  */
 public class Mission {
     // <editor-fold defaultstate="collapsed" desc="Fields">
@@ -17,10 +17,12 @@ public class Mission {
     private String questGiver;
     private int rewardGold;
     private int rewardExp;
+    private boolean completed;
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Constructor">
-    public Mission(int id, String name, String description, String questGiver, int rewardGold, int rewardExp) {
+    public Mission(int id, String name, String description, String questGiver, int rewardGold, int rewardExp) 
+    {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -36,7 +38,8 @@ public class Mission {
      * 
      * @return the id of the mission.
      */
-    public int getId() {
+    public int getId() 
+    {
         return id;
     }
 
@@ -45,7 +48,8 @@ public class Mission {
      * 
      * @return the name of the mission.
      */
-    public String getName() {
+    public String getName() 
+    {
         return name;
     }
 
@@ -54,7 +58,8 @@ public class Mission {
      * 
      * @return the description of the mission.
      */
-    public String getDescription() {
+    public String getDescription() 
+    {
         return description;
     }
 
@@ -63,7 +68,8 @@ public class Mission {
      * 
      * @return the questgiver.
      */
-    public String getQuestGiver() {
+    public String getQuestGiver() 
+    {
         return questGiver;
     }
 
@@ -72,7 +78,8 @@ public class Mission {
      * 
      * @return the gold per mission.
      */
-    public int getRewardGold() {
+    public int getRewardGold() 
+    {
         return rewardGold;
     }
 
@@ -81,7 +88,8 @@ public class Mission {
      * 
      * @return the experience.
      */
-    public int getRewardExp() {
+    public int getRewardExp() 
+    {
         return rewardExp;
     }
 
@@ -91,8 +99,9 @@ public class Mission {
      * @param player is the player that can accept the mission
      * @return true if the player has accepted the mission. Otherwise return false.
      */
-    public boolean accept(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean accept(Player player) 
+    {
+       
     }
 
     /**
@@ -101,8 +110,9 @@ public class Mission {
      * @param player is the player that can decline a mission.
      * @return true if the player has declines the mission. Otherwise return false.
      */
-    public boolean decline(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean decline(Player player) 
+    {
+        
     }
 
     /**
@@ -111,8 +121,13 @@ public class Mission {
      * @param player is the player that can finish a mission.
      * @return true if the player has finished a mission. Otherwise return false.
      */
-    public boolean finish(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean finish(Player player) 
+    {
+        //Set mission to completed.
+        completed = true;
+        //Add rewards to the character
+        
+        //Return true
     }
     // </editor-fold>
 }
