@@ -7,6 +7,7 @@ package dungeoncrawler;
 
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
+import org.newdawn.slick.tiled.TiledMap;
 
 /**
  *
@@ -14,6 +15,7 @@ import org.newdawn.slick.state.*;
  */
 public class Play extends BasicGameState
 {
+    private TiledMap tilemap;
     
     public Play(int state)
     {
@@ -29,13 +31,14 @@ public class Play extends BasicGameState
     @Override
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException 
     {
-        
+        tilemap = new TiledMap("resources/map.tmx");
     }
 
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics grphcs) throws SlickException 
     {
-        
+        tilemap.render(0, 0);
+        System.out.println("Swaaag");
     }
 
     @Override
