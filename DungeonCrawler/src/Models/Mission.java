@@ -101,7 +101,7 @@ public class Mission {
      */
     public boolean accept(Player player) 
     {
-       
+       return true;
     }
 
     /**
@@ -112,7 +112,7 @@ public class Mission {
      */
     public boolean decline(Player player) 
     {
-        
+        return true;
     }
 
     /**
@@ -126,7 +126,7 @@ public class Mission {
         //Set mission to completed.
         completed = true;
         //Add rewards to the character
-        
+        return true;
         //Return true
     }
     // </editor-fold>

@@ -11,38 +11,44 @@ import org.newdawn.slick.state.*;
  *
  * @author Maxime, Thijs
  */
-public class DungeonCrawler extends BasicGame
+public class DungeonCrawler extends StateBasedGame
 {
+    public static final String gamename = "Dungeon Crawler!";
+    public static final int menu = 0;
+    public static final int play = 1;
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args)
     {
-        // TODO code application logic here
+        
+        AppGameContainer appgc;
+        try
+        {
+           appgc = new AppGameContainer(new DungeonCrawler(gamename));
+           appgc.setDisplayMode(640, 360, false);
+           appgc.start();
+        }
+        catch(SlickException e)
+        {
+            e.printStackTrace();
+        }
     }
 
-    public DungeonCrawler(String title) 
+    public DungeonCrawler(String gamename) 
     {
-        super(title);
+        super(gamename);
+        this.addState(new Menu(menu));
+        this.addState(new Play(play));
     }
 
     @Override
-    public void init(GameContainer gc) throws SlickException 
+    public void initStatesList(GameContainer gc) throws SlickException 
     {
-        
+        this.getState(menu).init(gc, this);
+        this.getState(play).init(gc, this);
+        this.enterState(menu);
     }
-
-    @Override
-    public void update(GameContainer gc, int i) throws SlickException 
-    {
-        
-    }
-
-    @Override
-    public void render(GameContainer gc, Graphics grphcs) throws SlickException 
-    {
-        
-    }
-    
+  
 }

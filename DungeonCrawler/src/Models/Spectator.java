@@ -29,7 +29,7 @@ public class Spectator extends User {
      */
     public Player nextPlayer() 
     {
-        
+        return null;
     }
 
     /**
