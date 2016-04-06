@@ -61,17 +61,12 @@ public class DatabaseMediator {
                 int charClass = rS.getInt("class");
                 int gameID = rS.getInt("gameID");
                 int userID = rS.getInt("userID");
-                
-                if(experience = null){
-                return new Hero(id, naam, health, defence, attack, currentHealth, currentTurns, experience);      
-                }else if(expDrop == null && goldDrop == null){
-                    return new NPC(id, naam, health, defence, attack, currentHealth, currentTurns, expDrop, goldDrop);
-                }
             }
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         } finally {
             closeConnection();
+            return null;
         }
     }
 
