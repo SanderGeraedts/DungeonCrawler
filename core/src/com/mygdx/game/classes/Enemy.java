@@ -5,6 +5,7 @@
  */
 package com.mygdx.game.classes;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 
 /**
@@ -12,7 +13,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
  * @author Maxime
  */
 public class Enemy extends Character
-{  
+{ 
+    
     public Enemy(int id, String name, int health, int defence, int attack, int currentHealth, int currentTurns)
     {
         super(id, name, health, defence, attack, currentHealth, currentTurns);

@@ -20,18 +20,17 @@ public class Combat
     // </editor-fold>
     
     // <editor-fold defaultstate="collapsed" desc="Constructor">
-    public Combat(Character character, Item item, int kills)
+    public Combat(Character character, Character enemy)
     {
         this.character = character;
-        this.item = item;
-        this.kills = kills;
+        //this.item = item;
+        //this.kills = kills;
     }
     
-    public void doDamage(Character character, Item item, int damage)
+    public void doDamage(Character character, int damage, Character enemy)
     {
         this.character = character;
-        this.item = item;
-        this.damage = damage;
+        enemy.setHealth(enemy.getHealth() - damage);
     }
     
     public int receiveDamage(Character character, Item item, int damage)

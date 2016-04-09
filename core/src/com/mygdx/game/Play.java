@@ -7,6 +7,7 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
@@ -29,6 +30,7 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.List;
 import com.badlogic.gdx.utils.StringBuilder;
 import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
@@ -38,6 +40,8 @@ import com.mygdx.game.classes.Floor;
 import com.mygdx.game.classes.Hero;
 import com.mygdx.game.classes.Item;
 import java.awt.Point;
+import java.util.ArrayList;
+import static java.util.Collections.list;
 import java.util.Objects;
 import javax.swing.JLabel;
 
@@ -65,27 +69,37 @@ class Play implements Screen {
     private Combat combat;
     private Item item;
     private Hero hero;
+    private GameEnemy enemy;
     private Floor floor;
     private int kills;
     
-    private Enemy enemy;
+    private ArrayList<GameEnemy> enemies;
+    
+    //private Enemy enemy;
 
     public Play(MyGdxGame dungeonCrawler)
     {
         initializePlayerValues();
-        initializeEnemyValues();
         this.dungeonCrawler = dungeonCrawler;
-        hud = new HUD(dungeonCrawler.batch, hero, item, combat, floor, enemy);
+        
         //hud = new HUD(dungeonCrawler.batch, enemy);
+        
+        enemies = new ArrayList<GameEnemy>();
         
         TmxMapLoader loader = new TmxMapLoader();
         map = loader.load("dungeon_Map1.tmx");
         layer = map.getLayers().get(1);
         objects = layer.getObjects();
         //sprite = new Sprite(new Texture("C:\\Users\\Thijs\\Desktop\\PTgame\\core\\assets\\sprite.jpg"));
-        player = new Gameplayer(new Texture(Gdx.files.internal("knight_down.png")), new Texture(Gdx.files.internal("knight_up.png")), new Texture(Gdx.files.internal("knight_left.png")), new Texture(Gdx.files.internal("knight_right.png")));
+        player = new Gameplayer(new Texture(Gdx.files.internal("knight_down.png")), new Texture(Gdx.files.internal("knight_up.png")), new Texture(Gdx.files.internal("knight_left.png")), new Texture(Gdx.files.internal("knight_right.png")), this);
+        enemy = new GameEnemy(new Texture(Gdx.files.internal("knight_down.png")));
+        enemies.add(enemy);
         renderer = new OrthogonalTiledMapRenderer(map);
         camera = new OrthographicCamera();
+        
+        
+        
+        hud = new HUD(dungeonCrawler.batch, hero, item, combat, floor, enemy.enemy);
     }
     
     public void initializePlayerValues()
@@ -94,14 +108,9 @@ class Play implements Screen {
         kills = 0;
         hero = new Hero(1, "TestHero", 100, 10, 1, 100, 0, 0);
         item = new Item(1, "Short sword", "1h weapon", 0, 1);
-        combat = new Combat(hero, item, kills);
+        //combat = new Combat(hero, item, kills);
         floor = new Floor(1, "Level 1", 1);        
     }  
-    
-    public void initializeEnemyValues()
-    {
-        enemy = new Enemy(1, "warrior", 50, 0, 1, 50, 0); 
-    }
     
     @Override
     public void show() {
@@ -115,12 +124,36 @@ class Play implements Screen {
 //        camera = new OrthographicCamera();
     }
     
+    private void enterCombat(Gameplayer player)
+    {
+        // Set player speed to 0 so he cant escapre
+        player.speedX = 0;
+        player.speedY = 0;
+        // Draw text on the screen
+        hud.combatLog1.setText("Entered combat, Press space to attack!");
+        // Draw options on the screen
+        combat = new Combat(player.hero, enemy.enemy);
+        
+        
+    }
+    
+    private void checkCombatInput()
+    {
+        if(Gdx.input.isButtonPressed(Keys.SPACE))
+        {
+            //Attack
+            combat.doDamage(player.hero, 5, enemy.enemy);
+        }
+        //Check other inputs such as escape or use item
+    }
+    
     public boolean checkCollision(Gameplayer player) 
     {
         boolean value = false;
         // Checking for wall collisions.
         Point p1 = new Point(player.Coordx + 3, player.Coordy + 3);
         Point p2 = new Point(player.Coordx + 3, player.Coordy + 3);
+        
         Rectangle spriteRectangle = new Rectangle(p1.x, p1.y, 30, 30);
         Rectangle spriteEnemyRectangle = new Rectangle(p2.x, p2.y, 1, 1);
         for (RectangleMapObject rectangleObject : map.getLayers().get("Collision").getObjects().getByType(RectangleMapObject.class)) 
@@ -128,23 +161,39 @@ class Play implements Screen {
             Rectangle rectangle = rectangleObject.getRectangle();
             if (Intersector.overlaps(rectangle, spriteRectangle)) 
             {
-                value = true;
-            }
-            
-            if (Intersector.overlaps(rectangle, spriteEnemyRectangle))
-            {
-                value = true;
+               value = true;
             }
         }
         return value;
     }
 
+    
+    public void checkEnemyCollision(Gameplayer player)
+    {
+        System.out.println(player.Coordx + " " + player.Coordy);
+        System.out.println(enemy.coordX + " " + enemy.coordY);
+        for(GameEnemy e : enemies)
+        {
+            for (int x = enemy.coordX - 5; x < enemy.coordX + 5; x++) {
+                for (int y = enemy.coordY - 5; y < enemy.coordY + 5; y++) {
+                    if(player.Coordx == x && player.Coordy == y)
+                    {
+                        enterCombat(player);
+                    }
+                }
+            }
+        }
+    }
+    
     @Override
     public void render(float delta) {
         player.update(delta);
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
+        
+        //Check if the player is in combat with a bool
+        //If the player is in combat, is it his turn?
+        
         renderer.render();
         renderer.setView(camera);
         camera.position.set(player.getSprite().getX(), player.getSprite().getY(), 0);
@@ -153,67 +202,33 @@ class Play implements Screen {
         hud.enemyHealth.setVisible(false);
         hud.enemyName.setVisible(false);
         
+        checkEnemyCollision(player);
+        
         isColliding = checkCollision(player);       
         if (isColliding == true) 
         {
-            hud.enemyHealth.setVisible(true);
-            hud.enemyName.setVisible(true);
-        
             if(Gdx.input.isKeyPressed(Input.Keys.LEFT))
             {
-                System.out.println("left collision");
-                player.CoordDx = -5;
-                player.CoordDy = 0;
+                player.Coordx += 3;
             }
             if(Gdx.input.isKeyPressed(Input.Keys.RIGHT))
             {
-                System.out.println("right collision");
-                player.CoordDx = -5;
-                player.CoordDy = 0;
+                player.Coordx -= 3;
             }
             if(Gdx.input.isKeyPressed(Input.Keys.UP))
             {
-                System.out.println("up collision");
-                player.CoordDx = 0;
-                player.CoordDy = -5;
+                player.Coordy -= 3;
             }
             if(Gdx.input.isKeyPressed(Input.Keys.DOWN))
             {
-                System.out.println("down collision");
-                player.CoordDx = 0;
-                player.CoordDy = -5;
+                player.Coordy +=3;
             }
-            if(Gdx.input.isKeyPressed(Input.Keys.SPACE))
-            {              
-                if(enemy.getHealth() >= 0)
-                {
-                    System.out.println("PLAYER ATTACKS ENEMY");
-                    combat.doDamage(hero, item, 0);
-                    combat.receiveDamage(hero, item, enemy.getAttack());
-                    hud.HealthLabel.setText(String.valueOf(hero.getHealth()));
-
-                    System.out.println("ENEMY ATTACKS PLAYER");
-                    combat.doDamage(hero, item, 0);
-                    combat.receiveDamage(enemy, item, hero.getAttack());
-                    hud.enemyHealth.setText(String.valueOf(enemy.getHealth()));
-                }              
-                if(enemy.getHealth() <= 0)
-                {
-                    System.out.println("ENEMY KILLED");
-                    hud.enemyHealth.setText(": ENEMY KILLED");                                             
-                }
-            }
-
             isColliding = false;
-        }
-        else
-        {
-            player.CoordDx = 3;
-            player.CoordDy = 3;
         }
 
         renderer.getBatch().begin();
         player.render(renderer.getBatch());
+        enemy.render(renderer.getBatch());
         renderer.getBatch().end();
         
         dungeonCrawler.batch.setProjectionMatrix(hud.stage.getCamera().combined);
