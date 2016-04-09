@@ -94,7 +94,7 @@ class Play implements Screen {
         this.dungeonCrawler = dungeonCrawler;
         
         //hud = new HUD(dungeonCrawler.batch, enemy);
-        enemyE = new Enemy(1, "enemy1", 100, 100, 1, 100, 1);
+        enemyE = new Enemy(1, "enemy1", 50, 50, 1, 50, 1);
         enemies = new ArrayList<GameEnemy>();
         
         TmxMapLoader loader = new TmxMapLoader();
@@ -112,7 +112,7 @@ class Play implements Screen {
         enemies.add(enemy5);
         renderer = new OrthogonalTiledMapRenderer(map);
         camera = new OrthographicCamera();
-          
+         
         hud = new HUD(dungeonCrawler.batch, hero, dungeon, enemyE);
     }
     
@@ -154,6 +154,8 @@ class Play implements Screen {
         player.speedY = 0;
         // Draw text on the screen
         hud.combatLog1.setText("Entered combat, Press space to attack!");
+        hud.enemyHealth.setVisible(true);
+        hud.enemyName.setVisible(true);
         // Draw options on the screen
         combat = new Combat(player.hero, enemy.enemy);
         
@@ -166,10 +168,16 @@ class Play implements Screen {
         {
             hud.combatLog1.setText("Attacking the enemy!");
             //Attack
-
-            combat.doDamage(player.hero, hero.getAttack(), enemyE);
-            hud.HealthLabel.setText(String.valueOf(player.hero.getHealth()));
-            hud.enemyHealth.setText(String.valueOf(enemyE.getHealth()));
+            if(enemyE.getHealth() > 0)
+            {
+                combat.doDamage(player.hero, hero.getAttack(), enemyE);
+                hud.enemyHealth.setText(String.valueOf(enemyE.getHealth()));
+                hud.HealthLabel.setText(String.valueOf(player.hero.getHealth()));
+            }
+            else if(enemyE.getHealth() <= 0)
+            {
+                hud.combatLog1.setText("Enemy defeated!");                
+            }
         }
         if(Gdx.input.isKeyPressed(Keys.ESCAPE))
         {
@@ -229,6 +237,10 @@ class Play implements Screen {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         
+        // Set HUD visibility to false when the player is not in combat
+        hud.enemyHealth.setVisible(false);
+        hud.enemyName.setVisible(false);
+        
         //Check if the player is in combat with a bool
         //If the player is in combat, is it his turn?
         
@@ -266,11 +278,11 @@ class Play implements Screen {
 
         renderer.getBatch().begin();
         player.render(renderer.getBatch());
-        enemy.render(renderer.getBatch());
-        enemy2.render(renderer.getBatch());
-        enemy3.render(renderer.getBatch());
-        enemy4.render(renderer.getBatch());
-        enemy5.render(renderer.getBatch());
+        
+        for(GameEnemy ge : enemies)
+        {
+            ge.render(renderer.getBatch());
+        }
         renderer.getBatch().end();
         
         dungeonCrawler.batch.setProjectionMatrix(hud.stage.getCamera().combined);

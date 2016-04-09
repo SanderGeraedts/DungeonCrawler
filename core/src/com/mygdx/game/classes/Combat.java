@@ -30,7 +30,9 @@ public class Combat
     public void doDamage(Character character, int damage, Enemy enemy)
     {
         this.character = character;
-        enemy.setHealth(enemy.getHealth() - damage);
+        enemy.setHealth(damage);
+        
+        character.setHealth(damage);
     }
     
     public int receiveDamage(Character character, int damage)
