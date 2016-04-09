@@ -27,7 +27,7 @@ public class DungeonCrawler extends StateBasedGame
         try
         {
            appgc = new AppGameContainer(new DungeonCrawler(gamename));
-           appgc.setDisplayMode(640, 360, false);
+           appgc.setDisplayMode(720, 720, false);
            appgc.start();
         }
         catch(SlickException e)
