@@ -11,8 +11,8 @@ public class DesktopLauncher
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
                 config.title = "Dungeon Crawler!";
                 config.useGL30 = true;
-                config.width = 480;
-                config.height = 320;
+                config.width = 800;
+                config.height = 600;
                 
                 
 		new LwjglApplication(new MyGdxGame(), config);

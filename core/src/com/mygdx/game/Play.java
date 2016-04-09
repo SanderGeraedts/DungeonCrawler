@@ -35,6 +35,7 @@ import com.badlogic.gdx.utils.StringBuilder;
 import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.classes.Combat;
+import com.mygdx.game.classes.Dungeon;
 import com.mygdx.game.classes.Enemy;
 import com.mygdx.game.classes.Floor;
 import com.mygdx.game.classes.Hero;
@@ -43,6 +44,7 @@ import java.awt.Point;
 import java.util.ArrayList;
 import static java.util.Collections.list;
 import java.util.Objects;
+import java.util.Random;
 import javax.swing.JLabel;
 
 /**
@@ -70,20 +72,29 @@ class Play implements Screen {
     private Item item;
     private Hero hero;
     private GameEnemy enemy;
+    private GameEnemy enemy2;
+    private GameEnemy enemy3;
+    private GameEnemy enemy4;
+    private GameEnemy enemy5;
     private Floor floor;
     private int kills;
+    private Dungeon dungeon;
+    private Enemy enemyE;
     
     private ArrayList<GameEnemy> enemies;
+    private Random xCoord = new Random();
+    private Random yCoord = new Random();
     
     //private Enemy enemy;
 
     public Play(MyGdxGame dungeonCrawler)
     {
         initializePlayerValues();
+        initializeEnemyValues();
         this.dungeonCrawler = dungeonCrawler;
         
         //hud = new HUD(dungeonCrawler.batch, enemy);
-        
+        enemyE = new Enemy(1, "enemy1", 100, 100, 1, 100, 1);
         enemies = new ArrayList<GameEnemy>();
         
         TmxMapLoader loader = new TmxMapLoader();
@@ -92,14 +103,17 @@ class Play implements Screen {
         objects = layer.getObjects();
         //sprite = new Sprite(new Texture("C:\\Users\\Thijs\\Desktop\\PTgame\\core\\assets\\sprite.jpg"));
         player = new Gameplayer(new Texture(Gdx.files.internal("knight_down.png")), new Texture(Gdx.files.internal("knight_up.png")), new Texture(Gdx.files.internal("knight_left.png")), new Texture(Gdx.files.internal("knight_right.png")), this);
-        enemy = new GameEnemy(new Texture(Gdx.files.internal("knight_down.png")));
+        
+        //enemy = new GameEnemy(new Texture(Gdx.files.internal("knight_down.png")), 100, 100);
         enemies.add(enemy);
+        enemies.add(enemy2);
+        enemies.add(enemy3);
+        enemies.add(enemy4);
+        enemies.add(enemy5);
         renderer = new OrthogonalTiledMapRenderer(map);
         camera = new OrthographicCamera();
-        
-        
-        
-        hud = new HUD(dungeonCrawler.batch, hero, item, combat, floor, enemy.enemy);
+          
+        hud = new HUD(dungeonCrawler.batch, hero, dungeon, enemyE);
     }
     
     public void initializePlayerValues()
@@ -109,8 +123,17 @@ class Play implements Screen {
         hero = new Hero(1, "TestHero", 100, 10, 1, 100, 0, 0);
         item = new Item(1, "Short sword", "1h weapon", 0, 1);
         //combat = new Combat(hero, item, kills);
-        floor = new Floor(1, "Level 1", 1);        
+        dungeon = new Dungeon(1, "The underpass", "Dark dungeon", 1);
     }  
+    
+    public void initializeEnemyValues()
+    {
+        enemy = new GameEnemy(new Texture(Gdx.files.internal("knight_down.png")), 100, 100);
+        enemy2 = new GameEnemy(new Texture(Gdx.files.internal("knight_left.png")), 450, 280);
+        enemy3 = new GameEnemy(new Texture(Gdx.files.internal("knight_right.png")), 400, 180);
+        enemy4 = new GameEnemy(new Texture(Gdx.files.internal("knight_left.png")), 400, 480);
+        enemy5 = new GameEnemy(new Texture(Gdx.files.internal("knight_up.png")), 100, 380);
+    }
     
     @Override
     public void show() {
@@ -134,15 +157,30 @@ class Play implements Screen {
         // Draw options on the screen
         combat = new Combat(player.hero, enemy.enemy);
         
-        
+        checkCombatInput();
     }
     
     private void checkCombatInput()
     {
-        if(Gdx.input.isButtonPressed(Keys.SPACE))
+        if(Gdx.input.isKeyPressed(Keys.SPACE))
         {
+            hud.combatLog1.setText("Attacking the enemy!");
             //Attack
-            combat.doDamage(player.hero, 5, enemy.enemy);
+
+            combat.doDamage(player.hero, hero.getAttack(), enemyE);
+            hud.HealthLabel.setText(String.valueOf(player.hero.getHealth()));
+            hud.enemyHealth.setText(String.valueOf(enemyE.getHealth()));
+        }
+        if(Gdx.input.isKeyPressed(Keys.ESCAPE))
+        {
+            hud.combatLog1.setText("You escaped the fight!");
+            player.speedX = 3;
+            player.speedY = 3;
+            hud.combatLog1.setText("");
+        }
+        else
+        {
+            
         }
         //Check other inputs such as escape or use item
     }
@@ -174,8 +212,8 @@ class Play implements Screen {
         System.out.println(enemy.coordX + " " + enemy.coordY);
         for(GameEnemy e : enemies)
         {
-            for (int x = enemy.coordX - 5; x < enemy.coordX + 5; x++) {
-                for (int y = enemy.coordY - 5; y < enemy.coordY + 5; y++) {
+            for (int x = e.coordX - 5; x < e.coordX + 5; x++) {
+                for (int y = e.coordY - 5; y < e.coordY + 5; y++) {
                     if(player.Coordx == x && player.Coordy == y)
                     {
                         enterCombat(player);
@@ -199,8 +237,8 @@ class Play implements Screen {
         camera.position.set(player.getSprite().getX(), player.getSprite().getY(), 0);
         camera.update();
         
-        hud.enemyHealth.setVisible(false);
-        hud.enemyName.setVisible(false);
+        //hud.enemyHealth.setVisible(false);
+        //hud.enemyName.setVisible(false);
         
         checkEnemyCollision(player);
         
@@ -229,6 +267,10 @@ class Play implements Screen {
         renderer.getBatch().begin();
         player.render(renderer.getBatch());
         enemy.render(renderer.getBatch());
+        enemy2.render(renderer.getBatch());
+        enemy3.render(renderer.getBatch());
+        enemy4.render(renderer.getBatch());
+        enemy5.render(renderer.getBatch());
         renderer.getBatch().end();
         
         dungeonCrawler.batch.setProjectionMatrix(hud.stage.getCamera().combined);

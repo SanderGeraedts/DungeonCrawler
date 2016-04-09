@@ -27,16 +27,15 @@ public class Combat
         //this.kills = kills;
     }
     
-    public void doDamage(Character character, int damage, Character enemy)
+    public void doDamage(Character character, int damage, Enemy enemy)
     {
         this.character = character;
         enemy.setHealth(enemy.getHealth() - damage);
     }
     
-    public int receiveDamage(Character character, Item item, int damage)
+    public int receiveDamage(Character character, int damage)
     {
         this.character = character;
-        this.item = item;
         this.damage = damage;
         character.setHealth(damage);
         return damage;

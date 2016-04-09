@@ -3,9 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mygdx.game.classes;
-
-import java.util.ArrayList;
+package Models;
 
 /**
  *
@@ -14,14 +12,12 @@ import java.util.ArrayList;
 public class Hero extends Character {
     // <editor-fold defaultstate="collapsed" desc="Fields">
     private int experience;
-    private ArrayList<Hero> heroList;
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Constructor">
     public Hero(int ID, String name, int health, int defence, int attack, int currentHealth, int currentTurns, int experience) {
         super(ID, name, health, defence, attack, currentHealth, currentTurns);
         this.experience = experience;
-        heroList = new ArrayList<Hero>();
     }
     // </editor-fold>
 
@@ -105,20 +101,4 @@ public class Hero extends Character {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     // </editor-fold>
-    
-    public void addHero(Hero hero)
-    {
-        heroList.add(hero);
-        heroData();
-    }
-    
-    public void heroData()
-    {
-        addHero(new Hero(1, "Knight", 100, 100, 100, 100, 1, 0));
-    }
-    
-    public ArrayList<Hero> getHeros()
-    {
-        return heroList;
-    }
 }

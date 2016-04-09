@@ -5,22 +5,17 @@
  </tileset>
  <layer name="Background" width="20" height="20">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC2tjYWBoG8WjeBSP4lE8iknEACe6QlRABgAA
+   H4sIAAAAAAAAC2tjYWBoGyDsioQHyg2jeBSP4lE8isnDACbiK01ABgAA
   </data>
  </layer>
  <layer name="Graphics" width="20" height="20">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC2NgGBhwjIuB4RA7A8MRID7JDuFTah46HgWjYBSMglFAOwAArtq6d0AGAAA=
+   H4sIAAAAAAAAC2NgGBhwjIuBwZUFgUF8Ss1Dx6NgFIyCUTAKaAcAr9FXGEAGAAA=
   </data>
  </layer>
  <layer name="Tiles" width="20" height="20">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAC+NlYWDgpTKmFqCleZws2DG13EeOmfQ0D9nckWAervjGlwZg5lEjrRDjPlqbR8jf5JhHbfeRYh6h+CAkRmr5Qmx6oRaglXnElN3ElvUAQjcgVkAGAAA=
-  </data>
- </layer>
- <layer name="Enemy" width="20" height="20">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC2NgGAXEACbGgXYBbtCCg00v4EilsKGWOW7c1DFnFGCCxoF2AInAdTQt0BQAAGOe3GZABgAA
   </data>
  </layer>
  <objectgroup name="Collision">
@@ -45,11 +40,5 @@
   <object id="29" x="320" y="31" width="31" height="65"/>
   <object id="30" x="352" y="66" width="126" height="29"/>
   <object id="57" x="446" y="94" width="36" height="36"/>
-  <object id="60" name="enemy" x="264" y="422.667" width="16" height="19.3333"/>
-  <object id="61" name="enemy" x="424" y="167.333" width="16" height="19.3333"/>
-  <object id="62" name="enemy" x="455" y="103.333" width="16" height="19.3333"/>
-  <object id="63" name="enemy" x="521" y="168.333" width="16" height="19.3333"/>
-  <object id="64" name="enemy" x="169" y="230.333" width="16" height="19.3333"/>
-  <object id="65" name="enemy" x="105" y="264.333" width="16" height="19.3333"/>
  </objectgroup>
 </map>
