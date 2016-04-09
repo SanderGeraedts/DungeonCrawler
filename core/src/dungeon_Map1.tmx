@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="32" tileheight="32" nextobjectid="20">
+ <tileset firstgid="1" name="DungeonCrawl_ProjectUtumnoTileset" tilewidth="32" tileheight="32" tilecount="3072" columns="64">
+  <image source="DungeonCrawl_ProjectUtumnoTileset.png" width="2048" height="1536"/>
+ </tileset>
+ <layer name="Background" width="20" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgGAWjYBSMglEwCkgHADV9EcVABgAA
+  </data>
+ </layer>
+ <layer name="Tiles" width="20" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC7WUMQ7AIAwDGVg68DSQ+v/PdGFAUYJjaoZbEDo5GKXVUpqYIYLxdQPyPQHW45HJtzpHjTNl51X7Vq/3fh6MT9Wvyhf17WF96J4q320fmvvEp87H+FAf6IzdV9n/wvZ48n5/fDveSXbXfyCDV19ABgAA
+  </data>
+ </layer>
+ <objectgroup name="Collision">
+  <object id="1" x="-1" y="29" width="640"/>
+  <object id="2" x="0" y="35" width="31" height="545"/>
+  <object id="4" x="-3" y="609" width="257" height="29"/>
+  <object id="5" x="-1" y="581" width="32" height="25"/>
+  <object id="6" x="95" y="482" width="129" height="30"/>
+  <object id="7" x="190" y="286" width="34" height="194"/>
+  <object id="8" x="30" y="318" width="159" height="32"/>
+  <object id="9" x="192" y="284" width="350" height="35"/>
+  <object id="10" x="64" y="95" width="190" height="33"/>
+  <object id="11" x="191" y="128" width="95" height="62"/>
+  <object id="12" x="257" y="190" width="29" height="93"/>
+  <object id="13" x="349" y="384" width="34" height="158"/>
+  <object id="14" x="512" y="481" width="30" height="60"/>
+  <object id="15" x="383" y="512" width="128" height="29"/>
+  <object id="16" x="383" y="383" width="222" height="33"/>
+  <object id="17" x="320" y="606" width="320" height="33"/>
+  <object id="18" x="1" y="1" width="638" height="26"/>
+  <object id="19" x="605" y="31" width="35" height="573"/>
+ </objectgroup>
+</map>
