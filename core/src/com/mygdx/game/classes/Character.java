@@ -18,6 +18,14 @@ public abstract class Character {
     private int attack;
     private int currentHealth;
     private int currentTurns;
+    
+    
+    // Tryout..
+    public int Coordx;
+    public int Coordy;
+    public int CoordDx = 3;
+    public int CoordDy = 3;
+    
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Constructor">
@@ -29,6 +37,9 @@ public abstract class Character {
         this.attack = attack;
         this.currentHealth = currentHealth;
         this.currentTurns = currentTurns;
+        
+        this.Coordx = 50;
+        this.Coordy = 50;
     }
     // </editor-fold>
 
@@ -60,6 +71,12 @@ public abstract class Character {
      */
     public int getHealth()
     {
+        return health;
+    }
+    
+    public int setHealth(int health)
+    {
+        this.health -= health;
         return health;
     }
     
